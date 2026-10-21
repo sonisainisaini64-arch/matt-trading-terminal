@@ -1,0 +1,26 @@
+# Matt Trading Terminal - Mode Switch
+# Default: demo. Real par switch kabhi auto nahi hoga.
+# Real tabhi jab:
+#  1. Tum khud kaho "real par switch karo"
+#  2. MT5 MCP live connected ho aur demo par test pass ho
+#  3. Har live trade ke liye alag approval ho
+mode: demo
+platform: mt5
+mt5:
+  account_type: demo
+  server: ""        # tumhare MT5 demo account ka server, MCP milne par bharenge
+  mcp_endpoint: ""  # tum jo MCP doge, uska endpoint / naam yahan aayega
+  # MT5 password kabhi is file me ya chat me mat likhna.
+  # Wo secure vault / MCP ke apne secure tareeke se hi handle hoga.
+markets:
+  - Crypto: BTCUSDT
+  - Crypto: ETHUSDT
+  - Forex: EURUSD
+  - Forex: GBPUSD
+risk:
+  max_risk_per_trade_pct: 1.0
+  max_exposure_pct: 20.0
+learning:
+  journal_file: trade_journal.jsonl
+  lessons_file: lessons.json
+  min_trades_before_block: 2  # ek hi combo me 2 loss ho to strategy badal do
